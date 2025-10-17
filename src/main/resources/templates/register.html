@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<main layout:fragment="content">
+  <div class="text-center p-5 bg-white rounded shadow-sm">
+    <h2 class="text-primary">Register</h2>
+    <p class="lead text-success mt-3">✅ Complete</p>
+	
+	<div class="container">
+	    <div class="row justify-content-center">
+	      <div class="col-12 col-md-10 col-lg-7">
+	        <div class="card shadow-sm border-0 rounded-4">
+	          <div class="card-body p-4 p-md-5">
+
+	            <!-- Putting the UI into a form -->
+	            <form th:action="@{/register}" th:object="${user}" method="post" novalidate>
+
+	              <!-- Page heading -->
+	              <div class="text-center mb-4">
+	                <h1 class="h3 fw-bold text-primary mb-1">Create Account</h1>
+	                <p class="text-muted mb-0">Please fill out the following:</p>
+	              </div>
+
+	              <!-- Displays a red alert if validation fails -->
+	              <div th:if="${#fields.hasAnyErrors()}" class="alert alert-danger mb-4">
+	                Please review the highlighted fields below.
+	              </div>
+
+	              <!-- Input fields arrangement -->
+	              <div class="row g-3">
+					
+	                <!-- First Name -->
+	                <div class="col-md-6">
+	                  <label class="form-label fw-semibold">First Name</label>
+	                  <input class="form-control form-control-lg"
+	                         th:field="*{firstName}"
+	                         th:classappend="${#fields.hasErrors('firstName')} ? ' is-invalid' : ''">
+	                  <div class="invalid-feedback" th:errors="*{firstName}"></div>
+	                </div>
+
+	                <!-- Last Name -->
+	                <div class="col-md-6">
+	                  <label class="form-label fw-semibold">Last Name</label>
+	                  <input class="form-control form-control-lg"
+	                         th:field="*{lastName}"
+	                         th:classappend="${#fields.hasErrors('lastName')} ? ' is-invalid' : ''">
+	                  <div class="invalid-feedback" th:errors="*{lastName}"></div>
+	                </div>
+
+	                <!-- Email -->
+	                <div class="col-12">
+	                  <label class="form-label fw-semibold">Email</label>
+	                  <input type="email" class="form-control form-control-lg"
+	                         th:field="*{email}"
+	                         th:classappend="${#fields.hasErrors('email')} ? ' is-invalid' : ''">
+	                  <div class="invalid-feedback" th:errors="*{email}"></div>
+	                </div>
+
+	                <!-- Phone -->
+	                <div class="col-12">
+	                  <label class="form-label fw-semibold">Phone</label>
+	                  <input type="tel" class="form-control form-control-lg" placeholder="(555) 555-5555"
+	                         th:field="*{phone}"
+	                         th:classappend="${#fields.hasErrors('phone')} ? ' is-invalid' : ''">
+	                  <div class="invalid-feedback" th:errors="*{phone}"></div>
+	                </div>
+
+	                <!-- Username -->
+	                <div class="col-md-6">
+	                  <label class="form-label fw-semibold">Username</label>
+	                  <input class="form-control form-control-lg"
+	                         th:field="*{username}"
+	                         th:classappend="${#fields.hasErrors('username')} ? ' is-invalid' : ''">
+	                  <div class="invalid-feedback" th:errors="*{username}"></div>
+	                </div>
+
+	                <!-- Password -->
+	                <div class="col-md-6">
+	                  <label class="form-label fw-semibold">Password</label>
+	                  <input type="password" class="form-control form-control-lg"
+	                         th:field="*{password}"
+	                         th:classappend="${#fields.hasErrors('password')} ? ' is-invalid' : ''">
+	                  <div class="invalid-feedback" th:errors="*{password}"></div>
+	                </div>
+	              </div>
+
+	              <!-- Form buttons: Submit, Reset, Cancel -->
+	              <div class="d-grid d-md-flex gap-3 mt-4">
+	                <button class="btn btn-primary btn-lg flex-fill" type="submit">Create Account</button>
+	                <button class="btn btn-outline-secondary btn-lg" type="reset">Reset</button>
+	                <a class="btn btn-link btn-lg ms-md-auto" href="/" role="button">Cancel</a>
+	              </div>
+
+	            </form>
+
+	            <!-- Success message -->
+	            <div th:if="${param.success}" class="alert alert-success mt-4 text-center mb-0">
+	              Registration successful!
+	            </div>
+
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	
+	
+  </div>
+</main>
+</html>
