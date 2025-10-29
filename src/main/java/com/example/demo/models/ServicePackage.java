@@ -20,14 +20,40 @@ public class ServicePackage {
     private boolean active;        // can customers book this?
 
     // Getters/setters
-    public Long getId() { return id; } public void setId(Long id) { this.id = id; }
-    public String getCode() { return code; } public void setCode(String code) { this.code = code; }
-    public String getName() { return name; } public void setName(String name) { this.name = name; }
-    public String getDescription() { return description; } public void setDescription(String description) { this.description = description; }
-    public BigDecimal getBasePrice() { return basePrice; } public void setBasePrice(BigDecimal basePrice) { this.basePrice = basePrice; }
-    public Integer getDurationMins() { return durationMins; } public void setDurationMins(Integer durationMins) { this.durationMins = durationMins; }
-    public String getCategory() { return category; } public void setCategory(String category) { this.category = category; }
-    public Integer getRecommendedMiles() { return recommendedMiles; } public void setRecommendedMiles(Integer recommendedMiles) { this.recommendedMiles = recommendedMiles; }
-    public boolean isActive() { return active; } public void setActive(boolean active) { this.active = active; }
+    public Long getId() { return id; } 
+    
+    public void setId(Long id) { this.id = id; }
+    
+    public String getCode() { return code; } 
+    
+    public void setCode(String code) { this.code = code; }
+    
+    public String getName() { return name; } 
+    
+    public void setName(String name) { this.name = name; }
+    
+    public String getDescription() { return description; } 
+    
+    public void setDescription(String description) { this.description = description; }
+    
+    public BigDecimal getBasePrice() { return basePrice; } 
+    
+    public void setBasePrice(BigDecimal basePrice) { this.basePrice = basePrice; }
+    
+    public Integer getDurationMins() { return durationMins; } 
+    
+    public void setDurationMins(Integer durationMins) { this.durationMins = durationMins; }
+    
+    public String getCategory() { return category; } 
+    
+    public void setCategory(String category) { this.category = category; }
+    
+    public Integer getRecommendedMiles() { return recommendedMiles; } 
+    
+    public void setRecommendedMiles(Integer recommendedMiles) { this.recommendedMiles = recommendedMiles; }
+    
+    public boolean isActive() { return active; } 
+    
+    public void setActive(boolean active) { this.active = active; }
 }
 

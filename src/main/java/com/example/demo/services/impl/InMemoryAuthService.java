@@ -29,6 +29,7 @@ public class InMemoryAuthService implements AuthService {
     public LoginPrincipal authenticate(String username, String rawPassword) {
         if (username == null || rawPassword == null) return null;
         String stored = users.get(username);
+        
         if (stored != null && stored.equals(rawPassword)) {
             return new LoginPrincipal(
                 username,
